@@ -1,0 +1,27 @@
+---
+dependencies: []
+
+galaxy_info:
+  role_name: singularity
+  author: gabriel-milan
+  description: Installs singularity for Linux.
+  company: ""
+  license: "license (MIT)"
+  min_ansible_version: 2.4
+  platforms:
+    - name: Fedora
+      versions:
+        - all
+    - name: Debian
+      versions:
+        - all
+    - name: Ubuntu
+      versions:
+        - all
+  galaxy_tags:
+    - web
+    - system
+    - containers
+    - singularity
+    - orchestration
+    - server
