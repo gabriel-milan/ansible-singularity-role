@@ -1,0 +1,6 @@
+---
+singularity_version: "2.5.2"
+singularity_temp_path: "/tmp/singularity"
+singularity_fname: "singularity-{{ singularity_version }}"
+singularity_src_path: "{{ singularity_temp_path }}/{{ singularity_fname }}/"
+singularity_url: "https://github.com/singularityware/singularity/releases/download/{{ singularity_version }}/{{ singularity_fname }}.tar.gz"

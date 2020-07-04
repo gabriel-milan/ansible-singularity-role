@@ -1,0 +1,36 @@
+---
+- name: Create temporary directory for singularity files
+  file:
+    path: "{{ singularity_temp_path }}/"
+    state: directory
+    mode: '0755'
+- name: Download singularity
+  get_url:
+    url: "{{ singularity_url }}"
+    dest: "{{ singularity_temp_path }}/"
+- name: Unpack singularity
+  unarchive:
+    src: "{{ singularity_temp_path }}/{{ singularity_fname }}.tar.gz"
+    dest: "{{ singularity_temp_path }}/"
+    remote_src: yes
+    list_files: yes
+- name: Configure singularity
+  command:
+    chdir: "{{ singularity_src_path }}/"
+    cmd: "./configure --prefix=/usr/local"
+- name: Build singularity
+  make:
+    chdir: "{{ singularity_src_path }}/"
+- name: Install singularity
+  make:
+    chdir: "{{ singularity_src_path }}/"
+    target: install
+  become: true
+  become_user: root
+  become_method: sudo
+- name: Delete temporary files
+  file:
+    path: "{{ singularity_temp_path }}"
+    state: absent
+- name: Ensure singularity works
+  command: "singularity --version"
