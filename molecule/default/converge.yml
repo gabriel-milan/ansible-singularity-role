@@ -8,6 +8,11 @@
       apt: update_cache=yes cache_valid_time=600
       when: ansible_os_family == 'Debian'
 
+    - name: Install python and gcc
+      apt:
+        name: python,python3,gcc
+        state: latest
+
     - name: Wait for systemd to complete initialization.
       command: systemctl is-system-running
       register: systemctl_status
