@@ -10,8 +10,15 @@
 
     - name: Install python and gcc
       apt:
-        name: python,python3,gcc
+        name: python,python3,gcc,libarchive-dev
         state: latest
+      when: ansible_os_family == 'Debian'
+
+    - name: Install python and gcc
+      yum:
+        name: python,python3,gcc,libarchive-devel
+        state: latest
+      when: ansible_os_family == 'RedHat'
 
     - name: Wait for systemd to complete initialization.
       command: systemctl is-system-running

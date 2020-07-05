@@ -8,6 +8,8 @@ This role installs [Singularity](https://singularity.lbl.gov/) on Linux machines
 
 * python
 * gcc (or any compiler of your choice)
+* libarchive-dev (Debian-like distros)
+* libarchive-devel (RedHat-like distros)
 
 ## Variables
 
