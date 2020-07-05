@@ -6,7 +6,8 @@ This role installs [Singularity](https://singularity.lbl.gov/) on Linux machines
 
 ## Requirements
 
-None.
+* python
+* gcc (or any compiler of your choice)
 
 ## Variables
 
