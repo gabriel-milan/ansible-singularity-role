@@ -15,7 +15,7 @@ env:
     - MOLECULE_DISTRO: fedora31
 
 install:
-  - pip install molecule yamllint ansible-lint
+  - pip install molecule yamllint ansible-lint docker
 
 before_script:
   - cd ../
