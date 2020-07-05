@@ -1,7 +1,5 @@
 # Ansible Singularity Role
 
-[![Build Status](https://travis-ci.com/gabriel-milan/ansible-singularity-role.svg?branch=master)](https://travis-ci.com/gabriel-milan/ansible-singularity-role)
-
 This role installs [Singularity](https://singularity.lbl.gov/) on Linux machines.
 
 ## Requirements
