@@ -1,0 +1,29 @@
+---
+language: python
+
+env:
+  global:
+    - ROLE_NAME: singularity
+  matrix:
+    - MOLECULE_DISTRO: centos8
+    - MOLECULE_DISTRO: centos7
+    - MOLECULE_DISTRO: ubuntu2004
+    - MOLECULE_DISTRO: ubuntu1804
+    - MOLECULE_DISTRO: ubuntu1604
+    - MOLECULE_DISTRO: debian10
+    - MOLECULE_DISTRO: debian9
+    - MOLECULE_DISTRO: fedora31
+
+install:
+  - pip install molecule yamllint ansible-lint
+
+before_script:
+  - cd ../
+  - mv ansible-$ROLE_NAME-role gabriel_milan.$ROLE_NAME
+  - cd gabriel_milan.$ROLE_NAME
+
+script:
+  - molecule test
+
+notifications:
+  webhooks: https://galaxy.ansible.com/api/v1/notifications/
