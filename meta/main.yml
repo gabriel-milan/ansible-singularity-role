@@ -1,5 +1,6 @@
 ---
-dependencies: []
+dependencies:
+  - role: gantsign.golang
 
 galaxy_info:
   role_name: singularity
@@ -9,9 +10,6 @@ galaxy_info:
   license: "license (MIT)"
   min_ansible_version: 2.4
   platforms:
-    - name: Fedora
-      versions:
-        - all
     - name: Debian
       versions:
         - all
@@ -25,3 +23,4 @@ galaxy_info:
     - singularity
     - orchestration
     - server
+    - hpc
