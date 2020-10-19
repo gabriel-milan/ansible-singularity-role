@@ -22,10 +22,20 @@
     remote_src: yes
     list_files: yes
 
-- name: Compile singularity
+- name: Configure singularity
   command:
     chdir: "{{ singularity_src_path }}/"
-    cmd: "./mconfig && make -C ./builddir && sudo make -C ./builddir install"
+    cmd: "./mconfig"
+
+- name: Build singularity
+  command:
+    chdir: "{{ singularity_src_path }}/"
+    cmd: "make -C ./builddir"
+
+- name: Install singularity
+  command:
+    chdir: "{{ singularity_src_path }}/"
+    cmd: "sudo make -C ./builddir install"
 
 - name: Delete temporary files
   file:
