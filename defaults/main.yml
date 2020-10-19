@@ -1,6 +1,6 @@
 ---
 singularity_version: "3.6.4"
 singularity_temp_path: "/tmp/singularity"
-singularity_fname: "singularity-${{singularity_version}}.tar.gz"
+singularity_fname: "singularity-{{singularity_version}}.tar.gz"
 singularity_src_path: "{{singularity_temp_path}}/singularity/"
-singularity_url: "https://github.com/sylabs/singularity/releases/download/v${{singularity_version}}/{{singularity_fname}}"
+singularity_url: "https://github.com/sylabs/singularity/releases/download/v{{singularity_version}}/{{singularity_fname}}"
